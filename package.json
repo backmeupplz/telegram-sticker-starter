@@ -23,6 +23,7 @@
     "@types/node": "^12.7.3",
     "dotenv": "^8.1.0",
     "telegraf": "^3.32.0",
+    "text-to-picture": "backmeupplz/text-to-picture",
     "typescript": "^3.4.3"
   }
 }

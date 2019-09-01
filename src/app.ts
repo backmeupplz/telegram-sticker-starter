@@ -12,7 +12,7 @@ const stickerSetName = 'phpSuckedSeconds'
 
 bot.start(async ctx => {
   try {
-    const botUsername = (await bot.telegram.getMe()).username
+    const botUsername = ctx.me
     const stickerId = await getStickerId()
     await ctx.telegram.createNewStickerSet(
       ownerId,
@@ -37,7 +37,7 @@ bot.start(async ctx => {
 setInterval(updateSticker, 60 * 1000)
 async function updateSticker() {
   console.log('Updating stickers')
-  const botUsername = (await bot.telegram.getMe()).username
+  const botUsername = bot.options.username
   const stickerSet = await bot.telegram.getStickerSet(
     `${stickerSetName}_by_${botUsername}`
   )
